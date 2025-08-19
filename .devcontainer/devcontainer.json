@@ -2,6 +2,6 @@
   "name": "Graphql nest",
   "dockerComposeFile": "docker-compose.yml",
   "service": "node",
-  "workspaceFolder": "/app",
+  "workspaceFolder": ".",
   "forwardPorts": [3000, 5432]
 }
