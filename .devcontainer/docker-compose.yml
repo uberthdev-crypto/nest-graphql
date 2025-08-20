@@ -23,7 +23,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - /home/node/app/DB:/var/lib/postgresql/data
+      - DB:/var/lib/postgresql/data
 
    pgadmin:
     image: dpage/pgadmin4:latest
@@ -35,3 +35,4 @@ services:
       - "8080:80"   # expone pgAdmin en http://localhost:8080
     depends_on:
       - db
+volumes: DB
