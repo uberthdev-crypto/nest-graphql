@@ -22,3 +22,14 @@ services:
       POSTGRES_DB: app
     ports:
       - "5432:5432"
+
+   pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: snipsx17   # usuario para login
+      PGADMIN_DEFAULT_PASSWORD: Snipsx1991!          # contraseña para login
+    ports:
+      - "8080:80"   # expone pgAdmin en http://localhost:8080
+    depends_on:
+      - db
