@@ -1,6 +1,8 @@
+version: "3.9"
+
 services:
   node:
-    image: node:alpine3.22
+    build: .
     user: "node"
     working_dir: /home/node/app
     environment:
