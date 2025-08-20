@@ -6,10 +6,10 @@ services:
     environment:
       - NODE_ENV=development
     volumes:
-      - ..:/home/node/app  # nota: ".." si tu docker-compose.yml está en .devcontainer
+      - ..:/home/node/app
     ports:
       - "3000:3000"
-    command: sleep infinity   # 👈 mantiene el contenedor vivo
+    command: sleep infinity
     depends_on:
       - db
 
@@ -25,14 +25,16 @@ services:
     volumes:
       - DB:/var/lib/postgresql/data
 
-   pgadmin:
+  pgadmin:
     image: dpage/pgadmin4:latest
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: snipsx17   # usuario para login
-      PGADMIN_DEFAULT_PASSWORD: Snipsx1991!          # contraseña para login
+      PGADMIN_DEFAULT_EMAIL: snipsx17
+      PGADMIN_DEFAULT_PASSWORD: Snipsx1991!
     ports:
-      - "8080:80"   # expone pgAdmin en http://localhost:8080
+      - "8080:80"
     depends_on:
       - db
-volumes: DB
+
+volumes:
+  DB:
