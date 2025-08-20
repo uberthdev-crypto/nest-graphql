@@ -12,8 +12,6 @@ services:
     command: sleep infinity
     depends_on:
       - db
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   db:
     image: postgres:13
