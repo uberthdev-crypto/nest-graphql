@@ -1,3 +1,4 @@
+import { TagEntity } from "@/src/tag/tag.entity";
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions.js";
 
 export const config: PostgresConnectionOptions = {
@@ -7,7 +8,7 @@ export const config: PostgresConnectionOptions = {
     username: 'devuser',
     password: '1234',
     database: 'blog',
-    entities: [__dirname + '**/*.entity.{.ts, ,js}'],
+    entities: [TagEntity],
     synchronize: true // dont use in production
 }
 
